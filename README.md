@@ -1,4 +1,4 @@
-# Metro Safety Products — Landing Page
+# Metro Safety Products — Google Ads Landing Page
 
 Static B2B landing page for Metro Safety Products, an industrial safety-belt manufacturer based in Okhla, New Delhi.
 

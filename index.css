@@ -1,0 +1,133 @@
+:root {
+  /* Brand colours — Safety Yellow + Charcoal Black */
+  --brand-primary:   #FFC300;   /* Safety Yellow */
+  --brand-secondary: #1A1A1A;   /* Charcoal Black */
+  --brand-ink:       #1A1A1A;   /* Text ink (day) */
+  --brand-bg:        #FAFAF7;   /* Paper */
+  --brand-surface:   #FFFFFF;   /* Card surface */
+  --brand-muted:     #F0EEE6;   /* Muted strip */
+  --brand-hairline:  rgba(26,26,26,0.12);
+
+  /* Fonts */
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Section font sizes (fluid) — anchored to 320px, scaled via vw */
+  --fs-display:   clamp(2rem, 5.2vw, 4.5rem);    /* Hero H1  — 32px @320  →  72px @1385+ */
+  --fs-h2:        clamp(1.375rem, 2.8vw, 2rem);  /* Section  — 22px @320  →  32px @1143+ — fits "MANUFACTURER" in a col-span-4 grid col */
+  --fs-h3:        clamp(1.125rem, 3.2vw, 1.6rem);/* Card     — 18px @320  →  25.6px @800+ */
+  --fs-lead:      clamp(1rem, 1.8vw, 1.25rem);   /* Lead paragraph */
+  --fs-body:      1rem;
+  --fs-eyebrow:   0.75rem;
+  --fs-mono:      0.8125rem;
+}
+html.dark {
+  /* Safety-Yellow stays the brand primary; the "contrast" secondary
+     stays dark so yellow-on-black blocks continue to read correctly. */
+  --brand-primary:   #FFC300;
+  --brand-secondary: #0A0A0A;
+  --brand-ink:       #F2F0EA;
+  --brand-bg:        #0A0A0A;
+  --brand-surface:   #151515;
+  --brand-muted:     #1F1F1F;
+  --brand-hairline:  rgba(255,255,255,0.14);
+}
+
+/* Logo swap — show dark variant in night mode for proper contrast */
+.logo-dark { display: none; }
+html.dark .logo-light { display: none; }
+html.dark .logo-dark  { display: inline-block; }
+
+/* Form inputs — inherit brand ink in both themes */
+.form-field {
+  color: var(--brand-ink);
+  background: var(--brand-bg);
+  border: 1px solid var(--brand-hairline);
+}
+html.dark .form-field { border-color: rgba(255,255,255,0.22); }
+.form-field:focus { border-color: var(--brand-primary); outline: none; }
+html.dark input::placeholder,
+html.dark textarea::placeholder { color: rgba(242,240,234,0.45); }
+html.dark select option { background: var(--brand-surface); color: var(--brand-ink); }
+
+/* Social-icon circles — legible on both light and dark footers */
+.social-chip {
+  background: rgba(255,255,255,0.08);
+  color: var(--brand-primary);
+  transition: background-color 150ms ease;
+}
+.social-chip:hover { background: rgba(255,255,255,0.22); }
+html.dark .social-chip { background: rgba(255,255,255,0.10); }
+html.dark .social-chip:hover { background: rgba(255,255,255,0.28); }
+
+html, body { background: var(--brand-bg); color: var(--brand-ink); font-family: var(--font-body); }
+/* Guard: no horizontal scroll at any viewport */
+html, body { overflow-x: clip; }
+.font-display { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em; }
+.font-mono    { font-family: var(--font-mono); }
+
+/* Reviews — use IBM Plex Mono (same face as the eyebrow labels) for quote body */
+#reviews blockquote.font-display { font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.02em; }
+
+.h1-display { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-display); line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; overflow-wrap: break-word; hyphens: auto; }
+.h2-section { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-h2); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; overflow-wrap: break-word; hyphens: auto; }
+.h3-card    { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h3); line-height: 1.1; letter-spacing: -0.01em; overflow-wrap: break-word; hyphens: auto; }
+.eyebrow    { font-family: var(--font-mono); font-size: var(--fs-eyebrow); letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+
+.hairline { border-color: var(--brand-hairline); }
+.surface  { background: var(--brand-surface); border: 1px solid var(--brand-hairline); }
+
+/* Hazard tape band */
+.hazard-tape { background: repeating-linear-gradient(45deg, var(--brand-primary) 0 30px, var(--brand-secondary) 30px 60px); }
+
+/* Big section number */
+.section-no { font-family: var(--font-mono); font-size: clamp(3rem, 9vw, 7rem); line-height: 1; font-weight: 500; color: var(--brand-primary); -webkit-text-stroke: 1px var(--brand-ink); }
+html.dark .section-no { -webkit-text-stroke-color: var(--brand-ink); }
+
+/* Ticker / marquee */
+.marquee { display: flex; gap: 2rem; animation: scroll 40s linear infinite; }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } html { scroll-behavior: auto; } }
+
+/* Floating mobile bar padding */
+@media (max-width: 767px) { main { padding-bottom: 4.75rem; } }
+
+/* Alternating product row */
+.product-row > :nth-child(even) { border-left: 1px solid var(--brand-hairline); }
+@media (max-width: 767px) { .product-row > :nth-child(even) { border-left: 0; border-top: 1px solid var(--brand-hairline); } }
+
+/* Focus */
+:where(a,button,summary,input,textarea,select):focus-visible {
+  outline: 2px solid var(--brand-primary); outline-offset: 3px; border-radius: 4px;
+}
+
+/* Primary button */
+.btn-primary { background: var(--brand-primary); color: var(--brand-secondary); }
+html.dark .btn-primary { background: var(--brand-primary); color: #0A0A0A; }
+.btn-ghost { border: 1px solid var(--brand-hairline); color: var(--brand-ink); }
+.btn-ghost:hover { background: var(--brand-muted); }
+
+/* Primary nav links — padded pill that lights up on hover/focus */
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2px;
+  color: var(--brand-ink);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  background: var(--brand-primary);
+  color: var(--brand-secondary);
+  outline: none;
+}
+html.dark .nav-link:hover,
+html.dark .nav-link:focus-visible { color: #0A0A0A; }
+
+/* Spec list */
+.spec dt { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in oklab, var(--brand-ink) 65%, transparent); }
+.spec dd { font-weight: 600; }
+
+.stripe-border { position: relative; }
+.stripe-border::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--brand-primary); }

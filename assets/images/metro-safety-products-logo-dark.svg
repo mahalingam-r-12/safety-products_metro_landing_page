@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 70" width="260" height="70" role="img" aria-label="Metro Safety Products — hard hat and shield logo">
+  <!-- Shield + hard-hat composite mark (dark-bg variant — yellow ink) -->
+  <g transform="translate(6,6)">
+    <!-- Shield body -->
+    <path d="M30 2 L56 12 V28 Q56 48 30 58 Q4 48 4 28 V12 Z"
+          fill="#FFC300" stroke="#FFC300" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Hard hat inside shield -->
+    <g transform="translate(14,20)">
+      <rect x="0" y="18" width="32" height="5" rx="1.5" fill="#1A1A1A"/>
+      <path d="M3 18 Q3 4 16 4 Q29 4 29 18 Z" fill="#1A1A1A"/>
+      <rect x="14.5" y="6" width="3" height="12" fill="#FFC300"/>
+      <circle cx="8" cy="14" r="1.2" fill="#FFC300"/>
+      <circle cx="24" cy="14" r="1.2" fill="#FFC300"/>
+    </g>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="'Archivo', 'Inter', sans-serif" fill="#FFC300">
+    <text x="76" y="32" font-size="22" font-weight="900" letter-spacing="1">METRO</text>
+    <text x="76" y="52" font-size="11" font-weight="700" letter-spacing="3.5">SAFETY &#183; PRODUCTS</text>
+  </g>
+  <!-- Hazard strip underline -->
+  <rect x="76" y="56" width="176" height="4" fill="#1A1A1A"/>
+  <g transform="translate(76,56)" fill="#FFC300">
+    <rect x="0" y="0" width="8" height="4"/>
+    <rect x="20" y="0" width="8" height="4"/>
+    <rect x="40" y="0" width="8" height="4"/>
+    <rect x="60" y="0" width="8" height="4"/>
+    <rect x="80" y="0" width="8" height="4"/>
+    <rect x="100" y="0" width="8" height="4"/>
+    <rect x="120" y="0" width="8" height="4"/>
+    <rect x="140" y="0" width="8" height="4"/>
+    <rect x="160" y="0" width="8" height="4"/>
+  </g>
+</svg>

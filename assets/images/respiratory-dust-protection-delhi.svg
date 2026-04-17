@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="RESPIRATORY">
+  <defs>
+    <linearGradient id="g-respiratory-dust-protection-delhi-svg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E3338"/>
+      <stop offset="100%" stop-color="#3C4148"/>
+    </linearGradient>
+    <pattern id="hz-respiratory-dust-protection-delhi-svg" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="30" height="60" fill="rgba(255,195,0,0.10)"/>
+    </pattern>
+    <pattern id="gr-respiratory-dust-protection-delhi-svg" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="rgba(255,195,0,0.10)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g-respiratory-dust-protection-delhi-svg)"/>
+  <rect width="100%" height="100%" fill="url(#hz-respiratory-dust-protection-delhi-svg)"/>
+  <rect width="100%" height="100%" fill="url(#gr-respiratory-dust-protection-delhi-svg)"/>
+  <g stroke="#FFC300" stroke-width="3" fill="none">
+    <path d="M20 20 L60 20 M20 20 L20 60"/>
+    <path d="M380 20 L340 20 M380 20 L380 60"/>
+    <path d="M20 280 L60 280 M20 280 L20 240"/>
+    <path d="M380 280 L340 280 M380 280 L380 240"/>
+  </g>
+  <g font-family="'Archivo','Inter',sans-serif" fill="#FFC300" text-anchor="middle">
+    <text x="50%" y="45%" font-size="22" font-weight="800" letter-spacing="1">RESPIRATORY</text>
+    <text x="50%" y="56%" font-size="14" font-family="'IBM Plex Mono',monospace" opacity="0.75">400 &#215; 300</text>
+  </g>
+</svg>

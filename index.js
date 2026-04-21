@@ -43,7 +43,7 @@
 (function() {
   var form = document.getElementById('bulkForm');
   if (!form) return;
-  var WA_NUMBER = '919953062517';
+  var WA_NUMBER = '919971162517';
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var fd = new FormData(form);
@@ -51,6 +51,7 @@
     var name = get('name'), phone = get('phone'),
         product = get('product'), message = get('message');
     var err = document.getElementById('formErr');
+   console.log(name,phone,message,product)
     if (!name || !phone || !product) {
       if (err) err.classList.remove('hidden');
       return;
